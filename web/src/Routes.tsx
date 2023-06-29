@@ -12,7 +12,7 @@ import { Router, Route } from '@redwoodjs/router'
 const Routes = () => {
   return (
     <Router>
-      <Route path="/pf-chart" page={PFChartPage} name="pfChart" />
+      <Route path="/" page={PFChartPage} name="pfChart" />
       <Route notfound page={NotFoundPage} />
     </Router>
   )
