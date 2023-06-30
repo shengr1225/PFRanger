@@ -13,40 +13,44 @@ const BBPositionInput = (props: {
     <Box>
       <HStack p="4">
         <Text>BB: </Text>
-        <ButtonGroup spacing={1}>
-          {Object.keys(CHARTS).map((_bb) => {
-            return (
-              <Button
-                key={_bb}
-                colorScheme={props.bb == parseInt(_bb) ? 'red' : 'gray'}
-                onClick={() => {
-                  props.setBB(parseInt(_bb))
-                }}
-              >
-                {_bb}
-              </Button>
-            )
-          })}
-        </ButtonGroup>
+        <Box overflowX="scroll">
+          <ButtonGroup spacing={1}>
+            {Object.keys(CHARTS).map((_bb) => {
+              return (
+                <Button
+                  key={_bb}
+                  colorScheme={props.bb == parseInt(_bb) ? 'red' : 'gray'}
+                  onClick={() => {
+                    props.setBB(parseInt(_bb))
+                  }}
+                >
+                  {_bb}
+                </Button>
+              )
+            })}
+          </ButtonGroup>
+        </Box>
       </HStack>
       <HStack p="4">
         <Text>Position: </Text>
-        <ButtonGroup spacing={1}>
-          {POSITIONS.map((pos, index) => {
-            return (
-              <Button
-                key={pos}
-                colorScheme={index == props.position ? 'red' : 'gray'}
-                onClick={() => {
-                  props.setPosition(index)
-                }}
-                isDisabled={index == props.disabledPosition}
-              >
-                {pos}
-              </Button>
-            )
-          })}
-        </ButtonGroup>
+        <Box overflowX="scroll">
+          <ButtonGroup spacing={1}>
+            {POSITIONS.map((pos, index) => {
+              return (
+                <Button
+                  key={pos}
+                  colorScheme={index == props.position ? 'red' : 'gray'}
+                  onClick={() => {
+                    props.setPosition(index)
+                  }}
+                  isDisabled={index == props.disabledPosition}
+                >
+                  {pos}
+                </Button>
+              )
+            })}
+          </ButtonGroup>
+        </Box>
       </HStack>
     </Box>
   )
